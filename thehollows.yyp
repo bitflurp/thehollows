@@ -40,7 +40,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2023.8.2.108",
   },
   "name":"thehollows",
   "resources":[
@@ -69,11 +69,12 @@
     {"id":{"name":"scr_macro","path":"scripts/scr_macro/scr_macro.yy",},},
     {"id":{"name":"scr_textbox_function","path":"scripts/scr_textbox_function/scr_textbox_function.yy",},},
     {"id":{"name":"Area","path":"sprites/Area/Area.yy",},},
-    {"id":{"name":"arrow","path":"sprites/arrow/arrow.yy",},},
+    {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"Dialog_Box","path":"sprites/Dialog_Box/Dialog_Box.yy",},},
     {"id":{"name":"fn_mandy_face2","path":"sprites/fn_mandy_face2/fn_mandy_face2.yy",},},
     {"id":{"name":"IMG_0994","path":"sprites/IMG_0994/IMG_0994.yy",},},
     {"id":{"name":"IMG_0995","path":"sprites/IMG_0995/IMG_0995.yy",},},
+    {"id":{"name":"obj_witch","path":"objects/obj_witch/obj_witch.yy",},},
     {"id":{"name":"IMG_0997","path":"sprites/IMG_0997/IMG_0997.yy",},},
     {"id":{"name":"inventory","path":"sprites/inventory/inventory.yy",},},
     {"id":{"name":"key","path":"sprites/key/key.yy",},},
@@ -114,8 +115,8 @@
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"roomId":{"name":"rm_awaken","path":"rooms/rm_awaken/rm_awaken.yy",},},
     {"roomId":{"name":"rm_weltohollows","path":"rooms/rm_weltohollows/rm_weltohollows.yy",},},
-    {"roomId":{"name":"rm_testroom1","path":"rooms/rm_testroom1/rm_testroom1.yy",},},
     {"roomId":{"name":"rm_testroom2","path":"rooms/rm_testroom2/rm_testroom2.yy",},},
+    {"roomId":{"name":"rm_testroom1","path":"rooms/rm_testroom1/rm_testroom1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

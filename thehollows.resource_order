@@ -22,6 +22,7 @@
     {"name":"fn_mandy_face2","order":1,"path":"sprites/fn_mandy_face2/fn_mandy_face2.yy",},
     {"name":"IMG_0994","order":2,"path":"sprites/IMG_0994/IMG_0994.yy",},
     {"name":"IMG_0995","order":5,"path":"sprites/IMG_0995/IMG_0995.yy",},
+    {"name":"obj_witch","order":4,"path":"objects/obj_witch/obj_witch.yy",},
     {"name":"IMG_0997","order":6,"path":"sprites/IMG_0997/IMG_0997.yy",},
     {"name":"inventory","order":2,"path":"sprites/inventory/inventory.yy",},
     {"name":"Main_Menu","order":4,"path":"sprites/Main_Menu/Main_Menu.yy",},

@@ -97,7 +97,7 @@ if key_accept
 		
 		//arrow broken for some reason
 	if option_pos == op {
-		draw_sprite(spr_textbox_arrow,0,_txtb_hor, _txtb_vert - _op_space*option_number + _op_space*op)
+		draw_sprite(spr_arrow,0,_txtb_hor, _txtb_vert - _op_space*option_number + _op_space*op)
 		}	
 				
 			

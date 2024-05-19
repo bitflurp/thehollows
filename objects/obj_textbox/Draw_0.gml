@@ -1,7 +1,8 @@
-key_accept = keyboard_check_pressed(ord("E"));
+// becasue the createing the textbox and the accept are both e it keeps creating thr text box
+key_accept = keyboard_check_pressed(ord("Q"));
 
 textbox_hor = camera_get_view_x(view_camera[0]);
-textbox_vert = camera_get_view_y(view_camera[0])+289;
+textbox_vert = camera_get_view_y(view_camera[0])+650;
 
 //setup
 if setup == false
@@ -20,7 +21,69 @@ if setup == false
 			text_length[p] = string_length(text[p]);
 			//get the x position for the textbox
 			//no chaaracter (center the textbox)
-			text_hor_offset[p] = 160;
+			text_hor_offset[p] = 300;
+			
+			//setting the indevedual numbers and where lines should break
+			
+			for (var c = 0; c < text_length[p]; c++)
+			{
+				var _char_pos = c+1;
+			
+			//store indevidual characters in the char array
+			char[c, p] = string_char_at(text[p], _char_pos)
+			
+			//get current width of the line
+			var _txt_up_to_char = string_copy (text[p], 1, _char_pos);
+			var _current_txt_w = string_width(_txt_up_to_char)- string_width( char[c, p]);
+			
+			//get the last free space
+			if char[c, p] == " " { last_free_space = _char_pos+1};
+			
+			//get line break
+			if _current_txt_w - line_break_offset[p] > line_width
+			{
+				line_break_pos[ line_break_num[p] , p] = last_free_space;
+				line_break_num[p]++;
+				var _txt_up_to_last_space = string_copy( text[p], 1, last_free_space);
+				var _last_free_space_string = string_char_at(text[p], last_free_space);
+				line_break_offset[p] = string_width(_txt_up_to_last_space) - string_width( _last_free_space_string);
+			}
+			
+			}
+			
+			// getting each characters coordinates
+			for (var c = 0;  c < text_length[p]; c++)
+				{
+					
+					var _char_pos = c+1;
+					var _txt_hor = textbox_hor + text_hor_offset[p] + border;
+					var _txt_vert = textbox_vert + border;
+						//get current width of the line
+					var _txt_up_to_char = string_copy (text[p], 1, _char_pos);
+					var _current_txt_w = string_width(_txt_up_to_char)- string_width( char[c, p]);
+					var _txt_line = 0;
+					
+					//compinsate for string breaks 
+					for (var lb = 0 ; lb < line_break_num[p]; lb++)
+					{
+						// if current looping character is after linebreak
+						if _char_pos >= line_break_pos[lb, p]
+						{
+							var _scr_copy = string_copy( text[p], line_break_pos[lb, p], _char_pos-line_break_pos[lb, p] );
+							_current_txt_w = string_width(_scr_copy);
+							
+							//record the line this character should be on
+							_txt_line = lb+1;// +1 since lb start at 0
+						}
+					}
+					
+					//add to x and y position coords
+					char_hor[c, p] = _txt_hor + _current_txt_w;
+					char_vert[c, p] = _txt_vert + _txt_line*line_sep;
+					
+				}
+			
+			
 			
 		}
 	
@@ -86,14 +149,14 @@ if key_accept
 	option_pos += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
 	option_pos = clamp(option_pos, 0, option_number -1);
 	//draw options	
-		var _op_space = 15;
-		var _op_board = 4;
+		var _op_space = 50;
+		var _op_board = 25;
 		for (var op = 0; op < option_number; op++){
 			
 
 		//option box _o_w is option width
 		var _o_w = string_width(option[op]) + _op_board*2;
-		draw_sprite_ext(txtb_spr, textb_img, _txtb_hor + 25, _txtb_vert - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space -1)/txtb_spr_h, 0, c_white, 1)
+		draw_sprite_ext(txtb_spr, textb_img, _txtb_hor + 80, _txtb_vert - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space -1)/txtb_spr_h, 0, c_white, 1)
 		
 		//arrow broken for some reason
 	if option_pos == op {
@@ -102,7 +165,7 @@ if key_accept
 				
 			
 		//option text
-		draw_text(_txtb_hor + 25 + _op_board, _txtb_vert - _op_space*option_number + _op_space*op +2, option[op]);
+		draw_text(_txtb_hor + 80 + _op_board, _txtb_vert - _op_space*option_number + _op_space*op +2, option[op]);
 		
 		
 		
@@ -114,8 +177,11 @@ if key_accept
 	
 	
 	//draw the text
-	var _drawtext = string_copy(text[page], 1, draw_char);
-	draw_text_ext(_txtb_hor + border, _txtb_vert + border, _drawtext, line_sep, line_width);
+for (var c = 0; c < draw_char; c++)
+{
+ draw_text(char_hor[c, page], char_vert[c, page], char[c, page]);
+
+}
 
 
 

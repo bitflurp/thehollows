@@ -1,7 +1,7 @@
 var _s = id;
 
 //interact with text needs to be changed to be based on player location not mouse
-if position_meeting(mouse_x,mouse_y, id) && mouse_check_button_pressed(mb_left)
+if place_meeting(x,y,obj_player) && keyboard_check_pressed(ord("E"))
 
 {
 	create_textbox(text_id);
@@ -9,9 +9,4 @@ if position_meeting(mouse_x,mouse_y, id) && mouse_check_button_pressed(mb_left)
 
 
 }
-
-
-
-
-
 

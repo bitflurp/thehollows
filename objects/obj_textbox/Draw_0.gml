@@ -20,8 +20,23 @@ if setup == false
 			//find how many charaters are on each page and store that number in the "text_lenght" array
 			text_length[p] = string_length(text[p]);
 			//get the x position for the textbox
-			//no chaaracter (center the textbox)
-			text_hor_offset[p] = 300;
+			
+			//character on the left
+			text_hor_offset[p] = 600
+			portrait_hor_offset[p] = 25
+			//character on right
+			if speaker_side == -1
+			{
+				text_hor_offset[p] = 25;
+				portrait_hor_offset = 316;
+			
+			}
+			//no character
+			if speaker_sprite[p] == noone{
+				text_hor_offset[p] =300;
+			
+			}
+			
 			
 			//setting the indevedual numbers and where lines should break
 			
@@ -134,11 +149,13 @@ if key_accept
 	var _txtb_hor =  textbox_hor + text_hor_offset[page];
 	var _txtb_vert = textbox_vert;
 	textb_img += textb_img_spd;
-	txtb_spr_w = sprite_get_width(txtb_spr);
-	txtb_spr_h = sprite_get_height(txtb_spr);
+	txtb_spr_w = sprite_get_width(txtb_spr[page]);
+	txtb_spr_h = sprite_get_height(txtb_spr[page]);
+	//draw speaker
+	
 	//back of the textbox
 	
-	draw_sprite_ext(txtb_spr, textb_img, _txtb_hor, _txtb_vert, textbox_width/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white,1);
+	draw_sprite_ext(txtb_spr[page], textb_img, _txtb_hor, _txtb_vert, textbox_width/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white,1);
 	
 		//options; _op_space = the virtical distance between the options; _op_board = border around the text  
 	
@@ -156,7 +173,7 @@ if key_accept
 
 		//option box _o_w is option width
 		var _o_w = string_width(option[op]) + _op_board*2;
-		draw_sprite_ext(txtb_spr, textb_img, _txtb_hor + 80, _txtb_vert - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space -1)/txtb_spr_h, 0, c_white, 1)
+		draw_sprite_ext(txtb_spr[page], textb_img, _txtb_hor + 80, _txtb_vert - _op_space*option_number + _op_space*op, _o_w/txtb_spr_w, (_op_space -1)/txtb_spr_h, 0, c_white, 1)
 		
 		//arrow broken for some reason
 	if option_pos == op {

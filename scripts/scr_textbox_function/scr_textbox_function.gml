@@ -3,6 +3,10 @@ function scr_set_defaults_for_text() {
 line_break_pos[0, page_number] = 999;
 line_break_num[page_number] = 0;
 line_break_offset[page_number] = 0;
+
+text_length[page_number] = string_length(text[0]);
+speaker_sprite[page_number] = noone;
+speaker_side[page_number] = 1;
 }
 /// @param text
 function scr_text(_text){

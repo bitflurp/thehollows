@@ -5,7 +5,7 @@ textbox_height = 154;
 border = 8;
 line_sep =35;
 line_width = textbox_width - border*2;
-txtb_spr = spr_menu;
+txtb_spr[0] = spr_menu;
 textb_img = 0;
 //textbox animation speed
 textb_img_spd = 0;

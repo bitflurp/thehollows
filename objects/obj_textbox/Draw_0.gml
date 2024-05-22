@@ -22,18 +22,18 @@ if setup == false
 			//get the x position for the textbox
 			
 			//character on the left
-			text_hor_offset[p] = 600
-			portrait_hor_offset[p] = 25
+			text_hor_offset[p] = 320;
+			portrait_hor_offset[p] = 38;
 			//character on right
 			if speaker_side == -1
 			{
-				text_hor_offset[p] = 25;
-				portrait_hor_offset = 316;
+				text_hor_offset[p] = 320;
+				portrait_hor_offset = 870;
 			
 			}
 			//no character
-			if speaker_sprite[p] == noone{
-				text_hor_offset[p] =300;
+			if speaker_sprite[p] == noone {
+				text_hor_offset[p] =320;
 			
 			}
 			
@@ -152,7 +152,15 @@ if key_accept
 	txtb_spr_w = sprite_get_width(txtb_spr[page]);
 	txtb_spr_h = sprite_get_height(txtb_spr[page]);
 	//draw speaker
-	
+	if speaker_sprite[page] != noone
+	{
+		sprite_index = speaker_sprite[page];
+		var _speaker_hor = textbox_hor + portrait_hor_offset[page];
+		if speaker_side[page] == -1 {_speaker_hor += sprite_width};
+	//draw the speaker
+		draw_sprite_ext(txtb_spr[page], textb_img, textbox_hor + portrait_hor_offset[page], textbox_vert, sprite_width/txtb_spr_w, txtb_spr_h, 0, c_white, 1)
+		draw_sprite_ext(sprite_index, image_index, _speaker_hor, textbox_vert, speaker_side[page], 1, 0, c_white,1);
+	}
 	//back of the textbox
 	
 	draw_sprite_ext(txtb_spr[page], textb_img, _txtb_hor, _txtb_vert, textbox_width/txtb_spr_w, textbox_height/txtb_spr_h, 0, c_white,1);

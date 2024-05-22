@@ -43,7 +43,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"thehollows",
   "resources":[
@@ -81,7 +81,6 @@
     {"id":{"name":"inventory","path":"sprites/inventory/inventory.yy",},},
     {"id":{"name":"Key_Talks","path":"sprites/Key_Talks/Key_Talks.yy",},},
     {"id":{"name":"key","path":"sprites/key/key.yy",},},
-    {"id":{"name":"Keyless_Talk","path":"sprites/Keyless_Talk/Keyless_Talk.yy",},},
     {"id":{"name":"Main_Menu","path":"sprites/Main_Menu/Main_Menu.yy",},},
     {"id":{"name":"select","path":"sprites/select/select.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
@@ -92,6 +91,7 @@
     {"id":{"name":"spr_key","path":"sprites/spr_key/spr_key.yy",},},
     {"id":{"name":"spr_Key1","path":"sprites/spr_Key1/spr_Key1.yy",},},
     {"id":{"name":"spr_Key127","path":"sprites/spr_Key127/spr_Key127.yy",},},
+    {"id":{"name":"spr_Keyless_Talk","path":"sprites/spr_Keyless_Talk/spr_Keyless_Talk.yy",},},
     {"id":{"name":"spr_mandy_face","path":"sprites/spr_mandy_face/spr_mandy_face.yy",},},
     {"id":{"name":"spr_menu","path":"sprites/spr_menu/spr_menu.yy",},},
     {"id":{"name":"spr_speakblock","path":"sprites/spr_speakblock/spr_speakblock.yy",},},

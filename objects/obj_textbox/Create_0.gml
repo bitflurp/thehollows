@@ -9,7 +9,9 @@ txtb_spr[0] = spr_menu;
 textb_img = 0;
 //textbox animation speed
 textb_img_spd = 0;
-
+//portrait peramiters
+portrait_width = 220;
+portrait_height = 220;
 //text
 page = 0;
 page_number = 0;

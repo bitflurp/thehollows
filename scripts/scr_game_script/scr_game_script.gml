@@ -4,7 +4,7 @@ function scr_game_script(_text_id){
 switch(_text_id){
 
 	case"ncp 1":
-				scr_text("The blues, the ship of 'captian steel' ")
+				scr_text("The blues, the ship of 'captian steel' ", "key-keyless")
 				scr_text("It was great and i longed to be like him")
 				scr_text("Fiery red, and big as a castle")
 				scr_text("Only one ship like it in the world")

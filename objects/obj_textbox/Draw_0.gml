@@ -1,5 +1,5 @@
 // becasue the createing the textbox and the accept are both e it keeps creating thr text box
-key_accept = keyboard_check_pressed(ord("Q"));
+key_accept = keyboard_check_pressed(ord("E"));
 
 textbox_hor = camera_get_view_x(view_camera[0]);
 textbox_vert = camera_get_view_y(view_camera[0])+650;
@@ -25,10 +25,10 @@ if setup == false
 			text_hor_offset[p] = 320;
 			portrait_hor_offset[p] = 38;
 			//character on right
-			if speaker_side == -1
+			if speaker_side[p] == -1
 			{
 				text_hor_offset[p] = 320;
-				portrait_hor_offset = 870;
+				portrait_hor_offset[p] = 870;
 			
 			}
 			//no character
@@ -106,11 +106,30 @@ if setup == false
 	}
 
 //typing the text
+if text_pause_timer <= 0 {
 if draw_char < text_length[page]
 	{
 		draw_char += text_spd;
 		draw_char =clamp(draw_char,0,text_length[page]);
+		var _check_char = string_char_at( text[page], draw_char);
+		if _check_char == "." ||  _check_char == "?" ||  _check_char == "!" ||  _check_char == ","
+		{
+			text_pause_timer = text_pause_time;
+			if !audio_is_playing(snd[page]){
+			 audio_play_sound(snd[page], 8,false);
+			}
+		}
+		
+		else{
+			//typring sound
+			if snd_count < snd_delay { snd_count++;}
+			else{snd_count = 0; audio_play_sound(snd[page], 8,false);}
+		}
+		
 	}
+} else{
+		text_pause_timer --;
+}
 	
 //flip through pages
 if key_accept
@@ -155,11 +174,12 @@ if key_accept
 	if speaker_sprite[page] != noone
 	{
 		sprite_index = speaker_sprite[page];
+		if draw_char == text_length[page]{image_index = 0}
 		var _speaker_hor = textbox_hor + portrait_hor_offset[page];
 		if speaker_side[page] == -1 {_speaker_hor += sprite_width};
 	//draw the speaker
-		draw_sprite_ext(txtb_spr[page], textb_img, textbox_hor + portrait_hor_offset[page], textbox_vert, sprite_width/txtb_spr_w, txtb_spr_h, 0, c_white, 1)
-		draw_sprite_ext(sprite_index, image_index, _speaker_hor, textbox_vert, speaker_side[page], 1, 0, c_white,1);
+		
+		draw_sprite_ext(sprite_index, image_index, _speaker_hor, textbox_vert +-127, speaker_side[page], 1, 0, c_white,1);
 	}
 	//back of the textbox
 	
@@ -201,10 +221,34 @@ if key_accept
 	}
 	
 	
+	
+	
 	//draw the text
 for (var c = 0; c < draw_char; c++)
 {
- draw_text(char_hor[c, page], char_vert[c, page], char[c, page]);
+	//special stuff
+	//wavy text
+	var _wave_y = 0;
+	if wave_text[c, page] == true
+		{
+			//beteen 4-8 is a good speed
+			wave_dir[c,page] += -10;
+			_wave_y = dsin (wave_dir[c,page])*3;
+		}
+	//shake text
+		var _shake_x = 0;
+		var _shake_y = 0;
+		if shake_text[c, page] == true
+		{
+			shake_timer[c,page] --;
+			if shake_timer[c,page] <= 0 {
+				shake_timer[c,page] = irandom_range(4, 8);
+				shake_dir[c,page] = irandom(360);
+			}
+			_shake_x =lengthdir_x(3, shake_dir[c,page]);
+			_shake_y =lengthdir_y(3, shake_dir[c,page]);
+		}
+ draw_text_color(char_hor[c, page] + _shake_x, char_vert[c, page] + _wave_y + _shake_y, char[c, page], col_1[c,page], col_1[c,page], col_1[c,page], col_1[c,page], 1);
 
 }
 

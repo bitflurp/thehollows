@@ -9,9 +9,7 @@ txtb_spr[0] = spr_menu;
 textb_img = 0;
 //textbox animation speed
 textb_img_spd = 0;
-//portrait peramiters
-portrait_width = 220;
-portrait_height = 220;
+
 //text
 page = 0;
 page_number = 0;
@@ -33,9 +31,15 @@ option_number = 0;
 
 setup = false;
 
+//sound
+snd_delay = 8;
+snd_count =snd_delay;
+
 //effects
 scr_set_defaults_for_text();
 last_free_space = 0;
+text_pause_timer = 0;
+text_pause_time = 16;
 
 
 

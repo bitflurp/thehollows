@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"thehollows",
-    "path":"thehollows.yyp",
+    "name":"Room backgrounds",
+    "path":"folders/Room backgrounds.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

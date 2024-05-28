@@ -42,11 +42,12 @@ switch(_text_id){
 		scr_text("She gets at zooms across the bridge")
 	break;
 	case"ncp 2":
-				scr_text("Welcome to the infinite world")
-				scr_text("What's my endgame? there came a zero")
-				scr_text("Sent here, there's silence everywhere - no peace either")
-				scr_text("Where there is no beginning and no end - will I be like that?")
-				scr_text("And if the words that won't go away still ruin my head")
+				scr_text("The world is split into 2 parts The Crown and The Hollows")
+				scr_text("These lands where home to 2 Kin Dragons and Humans ")
+				scr_text("The 2 Kin fought for the crown, eventually the humans flead to The Hollows")
+				scr_text("But humans weren’t willing to give up and discovered the power of breath")
+				scr_text("They reemerged to The Crown and began the Dragon Crusades")
+				scr_text("The Dragons became a memory but there still remained the Tarragon. Humans of dragon blood condemned to The Hollows")
 
 		break;
 

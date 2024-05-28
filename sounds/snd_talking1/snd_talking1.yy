@@ -7,7 +7,7 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":0,
+  "compression":3,
   "conversionMode":0,
   "duration":0.214708,
   "name":"snd_talking1",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_talking1.wav",
   "type":0,
-  "volume":0.45,
+  "volume":0.19,
 }

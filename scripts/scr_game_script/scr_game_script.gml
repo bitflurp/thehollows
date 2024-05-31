@@ -41,16 +41,36 @@ switch(_text_id){
 		scr_text("hmm!",  "Scheik-angry", -1)
 		scr_text("She gets at zooms across the bridge")
 	break;
-	case"ncp 2":
-				scr_text("The world is split into 2 parts The Crown and The Hollows")
-				scr_text("These lands where home to 2 Kin Dragons and Humans ")
-				scr_text("The 2 Kin fought for the crown, eventually the humans flead to The Hollows")
-				scr_text("But humans weren’t willing to give up and discovered the power of breath")
-				scr_text("They reemerged to The Crown and began the Dragon Crusades")
-				scr_text("The Dragons became a memory but there still remained the Tarragon. Humans of dragon blood condemned to The Hollows")
-
+	case"cutscene":
+				scr_text("The world is split into 2 parts The Crown and The Hollows","scene-1", 2)
+				scr_text("These lands where home to 2 Kin Dragons and Humans ","scene-2", 2)
+				scr_text("The 2 Kin fought for the crown, eventually the humans flead to The Hollows","scene-3", 2)
+				scr_text("But humans weren’t willing to give up and discovered the power of breath","scene-4", 2)
+				scr_text("They reemerged to The Crown and began the Dragon Crusades","scene-5", 2)
+				scr_text("The Dragons became a memory but there still remained the Tarragon. Humans of dragon blood condemned to The Hollows","scene-6", 2)	
+			
 		break;
-
+	case"m_dev-meeting":
+			scr_text("Hiyya ! I made this game. You've made it to the end, I know. I know. short")
+			scr_text("but hey cut me some slack rpgs take a while, it not like i had 8 years of development or anything")
+			scr_text("I hope you atleast like what you did play")
+			scr_text("Since this is the end ofthe game and I am the OMNIPOTENT GOD of this world you can ask me 1 question")
+			scr_text("but be warned you must choose carfully as after this conversation the game will close ")
+					scr_option("What does the key open? ","m_dev-answer1")
+					scr_option("Is your favrite colour red? You're so red its weird","m_dev-answer2")
+	break;
+	case"m_dev-answer1":
+			scr_text("What does the key open?", "key-keyless")
+			scr_text("For what that key opens, i don't know but who created the seal ")
+			scr_text("Sol God of the order of the singular sun after he won the battle against the dragons in the Dragon Crusades")
+			scr_text("alright bye bye now ! : 3")
+			
+			break;
+		case"m_dev-answer2":
+			scr_text("Is your favrite colour red You're so red its weird",  "key-keyless")
+			scr_text("No my favorite color is purple look at this game ITS ALL PURPLE! but the only colour that fits my unhinged personality is red")
+			scr_text("you think I look weird? look at that tunic its MASSIVE you look weird I would know i made you and this dialog")
+			scr_text("alright bye bye now ! : 3")
+		break;
 }
-
 }

@@ -110,6 +110,37 @@ text[page_number] = _text;
 			txtb_spr[page_number] = spr_menu;
 			snd[page_number] = snd_talking1;
 			break;
+			//Intro cutscene
+			case "scene-1":
+			speaker_sprite[page_number] = scene1;
+			txtb_spr[page_number] = spr_menu;
+			snd[page_number] = snd_talking1;
+			break;
+			case "scene-2":
+			speaker_sprite[page_number] = scene2;
+			txtb_spr[page_number] = spr_menu;
+			snd[page_number] = snd_talking1;
+			break;
+			case "scene-3":
+			speaker_sprite[page_number] = scene3;
+			txtb_spr[page_number] = spr_menu;
+			snd[page_number] = snd_talking1;
+			break;
+			case "scene-4":
+			speaker_sprite[page_number] = scene4;
+			txtb_spr[page_number] = spr_menu;
+			snd[page_number] = snd_talking1;
+			break;
+			case "scene-5":
+			speaker_sprite[page_number] = scene5;
+			txtb_spr[page_number] = spr_menu;
+			snd[page_number] = snd_talking1;
+			break;
+			case "scene-6":
+			speaker_sprite[page_number] = scene6;
+			txtb_spr[page_number] = spr_menu;
+			snd[page_number] = snd_talking1;
+			break;
 	}
 	}
 //side character is on

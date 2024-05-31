@@ -1,14 +1,15 @@
 
 ///Movement
-Key_Left = keyboard_check_direct(ord("A"));
-Key_Right = keyboard_check_direct(ord("D"));
-Key_Up = keyboard_check_direct(ord("W"));
-Key_Down = keyboard_check_direct(ord("S"));
+Key_Left = keyboard_check_direct(ord("A")) || keyboard_check_direct(vk_left);
+Key_Right = keyboard_check_direct(ord("D"))|| keyboard_check_direct(vk_right);
+Key_Up = keyboard_check_direct(ord("W"))|| keyboard_check_direct(vk_up);
+Key_Down = keyboard_check_direct(ord("S"))|| keyboard_check_direct(vk_down);
 Key_Sprint = keyboard_check_direct(vk_lshift);
-Key_Attack = keyboard_check_direct(ord("H"));
+
 
 key_hor = ( Key_Right - Key_Left) * playerSpeed;
 key_vert = ( Key_Down - Key_Up) *playerSpeed;
+
 
 //pause
 if instance_exists(obj_pauser)
@@ -17,8 +18,8 @@ if instance_exists(obj_pauser)
  key_vert = 0;
 }
 
-
  //SET SPRITE
+ 
  mask_index = sprite[DOWN];
  if key_vert == 0
  {
@@ -26,19 +27,18 @@ if instance_exists(obj_pauser)
  if key_hor < 0 {face = LEFT}
  }
  
- if key_hor > 0 && face == LEFT{face = RIGHT}
- if key_hor < 0 && face == RIGHT{face = LEFT}
+ if key_hor > 0 && face = RIGHT{sprite_index = spr_KeyWalkR };
+ if key_hor < 0 && face = LEFT{sprite_index = spr_KeyWalkL};
+ if key_vert > 0 && face = RIGHT{sprite_index =spr_KeyWalkR};
+ if key_vert < 0 && face = RIGHT{sprite_index =spr_KeyWalkR};
+ if key_vert > 0 && face = LEFT{sprite_index = spr_KeyWalkL};
+ if key_vert > 0 && face = RIGHT{sprite_index =spr_KeyWalkR};
+ if key_vert > 0 && face = LEFT{sprite_index = spr_KeyWalkL};
+ if key_vert < 0 && face = RIGHT{sprite_index=spr_KeyWalkR};
+ if key_vert < 0 && face = LEFT{sprite_index=spr_KeyWalkL};
  
- if key_hor == 0
- {
- if key_vert < 0 {face = UP}
- if key_vert > 0 {face = DOWN}
- }
- if key_vert > 0 && face == UP{face = DOWN}
- if key_vert < 0 && face == DOWN{face = UP}
+ if key_hor == 0 && key_vert == 0 {sprite_index = spr_key_idle};
  
- sprite_index = sprite[face];
-
 //Collisions and Movement
 //x
 if place_meeting(x + key_hor , y, obj_wall) ==true

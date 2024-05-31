@@ -13,13 +13,13 @@ global.item_list = {
 key : new create_item(
 "key",
 "a key found in the hollow, what it unlock is a mystery",
-spr_key
+spr_thekey
 ),
 
 sword : new create_item(
 "sword", 
 "an unsharped sword with no tip, purly decorational and unweidable by a 10 year old",
-spr_sword
+spr_asword
 ) ,
 
 }

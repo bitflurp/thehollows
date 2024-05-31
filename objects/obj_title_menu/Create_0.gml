@@ -1,7 +1,7 @@
-width = 337;
+width = 437;
 height = 157;
 
-op_boarder = 35;
+op_boarder = 25;
 op_space =  50;
 
 pos = 0;

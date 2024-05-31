@@ -24,17 +24,24 @@ if setup == false
 			//character on the left
 			text_hor_offset[p] = 320;
 			portrait_hor_offset[p] = 38;
+			portrait_vert_offset[p] =-127;
 			//character on right
 			if speaker_side[p] == -1
 			{
 				text_hor_offset[p] = 320;
-				portrait_hor_offset[p] = 870;
-			
+				portrait_hor_offset[p] = 827;
+				portrait_vert_offset[p] =-127;
+			}
+			//cutscene config
+			if speaker_side[p] == 2
+			{
+			text_hor_offset[p] = 320;
+			portrait_hor_offset[p] = 0;
+			portrait_vert_offset[p] = -700;
 			}
 			//no character
 			if speaker_sprite[p] == noone {
-				text_hor_offset[p] =320;
-			
+				text_hor_offset[p] =320;	
 			}
 			
 			
@@ -149,6 +156,7 @@ if key_accept
 				if option_number > 0{
 				create_textbox(option_link_id[option_pos]);
 				}
+				
 				instance_destroy();
 			
 				}
@@ -176,10 +184,12 @@ if key_accept
 		sprite_index = speaker_sprite[page];
 		if draw_char == text_length[page]{image_index = 0}
 		var _speaker_hor = textbox_hor + portrait_hor_offset[page];
+		var _speaker_vert = textbox_vert + portrait_vert_offset[page];
 		if speaker_side[page] == -1 {_speaker_hor += sprite_width};
+		
 	//draw the speaker
 		
-		draw_sprite_ext(sprite_index, image_index, _speaker_hor, textbox_vert +-127, speaker_side[page], 1, 0, c_white,1);
+		draw_sprite_ext(sprite_index, image_index, _speaker_hor, _speaker_vert, speaker_side[page], 1, 0, c_white,1);
 	}
 	//back of the textbox
 	

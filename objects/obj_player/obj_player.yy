@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"The_Key_bearer_2_",
-    "path":"sprites/The_Key_bearer_2_/The_Key_bearer_2_.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

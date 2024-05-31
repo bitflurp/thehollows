@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_a_place_i_dont_know",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":144,
+  "compression":3,
+  "conversionMode":0,
+  "duration":90.5665,
+  "name":"snd_a_place_i_dont_know",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_a_place_i_dont_know.mp3",
+  "type":1,
+  "volume":1.0,
+}

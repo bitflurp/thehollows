@@ -10,3 +10,12 @@ if place_meeting(x,y,obj_player) && keyboard_check_pressed(ord("E")) && !instanc
 
 }
 
+if instance_exists(obj_textbox) &&  instance_exists(obj_witch)
+{
+	alarm[0] =3;
+}
+
+if instance_exists(obj_textbox) &&  instance_exists(obj_me)
+{
+	alarm[1] =3;
+}
